@@ -22,7 +22,36 @@ assuming a message long 32bytes
 | 2^8 | 69.632Kb | 32bytes | 196.608Kb |
 | 2^10 | 278.528Kb | 32bytes | 786.432Kb |
 | N | N*16^2 + N | msg_size | 3N\*(16)^2
+### Tests conducted
+| test type | sample size | milliseconds | ms each |
+|---|---|---|---|
+| keypair generation | 10000 | 872.726ms | 0.0872ms | 
+|sign N=2| 1000 | 151.348000ms | 0.151348ms |
+|sign N=16| 1000 | 1112.777000ms | 1.112777ms |
+|sign N=32| 1000 | 2189.722000ms | 2.189722ms |
+|sign N=64| 1000 | 4298.431000ms | 4.298431ms |
+|sign N=128| 1000 | 8683.565000ms | 8.683565ms |
+|sign N=256| 1000 | 17377.749000ms | 17.377749ms |
+|sign N=512| 100 | 3509.350000ms | 35.093500ms |
+|sign N=1024| 100 | 6935.590000ms | 69.355900ms |
+|sign&ver N=2| 1000 | 328.129000ms | 0.328129ms |
+|sign&ver N=16| 1000 | 2267.926000ms | 2.267926ms |
+|sign&ver N=32| 1000 | 4331.254000ms | 4.331254ms |
+|sign&ver N=64| 1000 | 8863.452000ms | 8.863452ms |
+|sign&ver N=128| 1000 | 17518.844000ms | 17.518844ms |
+|sign&ver N=256| 1000 | 35187.886000ms | 35.187886ms |
+|sign&ver N=512| 100 | 7205.680000ms | 72.056800ms |
+|sign&ver N=1024| 100 | 14689.807000ms | 146.898070ms |
+|verify N=2| 1000 | 151.614000ms | 0.151614ms |
+|verify N=16| 1000 | 1116.654000ms | 1.116654ms |
+|verify N=32| 1000 | 2190.187000ms | 2.190187ms |
+|verify N=64| 1000 | 4331.969000ms | 4.331969ms |
+|verify N=128| 1000 | 8687.751000ms | 8.687751ms |
+|verify N=256| 1000 | 17353.195000ms | 17.353195ms |
+|verify N=512| 100 | 3496.695000ms | 34.966950ms |
+|verify N=1024| 100 | 7306.840000ms | 73.068400ms |
 
+Trace benchmark will be made later when the optimised RTraces() function is completed. Sorry for the disorder of `main.c`, but you will find a good documented `ring.c` and `ring.h`.
 
 ## How to use
 See the main function and try to implement it in your code. I will try to make a better documentation in the future.  
@@ -39,7 +68,7 @@ make -s
 
 ## Possible applications
 It can be used for anonymous voting. Each player can make a signature as a group. An outsider seeing the signature cannot know with certainty greater than 1/group_size who in the ring signed the message. Moreover it is Traceable, meaning that if a player inside the ring signs (even the same message!) more than once, this can be traced and the player public key revealed.  
-Important note is that with a keypair (public and private keys) it is not suggested(allowed) to sign more than once.  
+Important note: a key must be used only once and then canceled. If the key is reused (for even the same signature), no security guarantee is provided in terms of anonymity and unforgeability.  
 Possible applications can be online anonymous voting, based on blockchain: a project that I'm working at [github.com/NickP005/e-ring-voting/](https://github.com/NickP005/e-ring-voting/)
 
 ## Plans for the future
