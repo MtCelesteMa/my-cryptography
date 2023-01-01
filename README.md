@@ -3,6 +3,13 @@
 This is a simple cryptography library for Python and C.
 
 # One-Time Traceable Ring Signature
+## Table of contents
+* [Overview](#overview)
+* [Performance](#performance)
+* [How to compile](#how-to-compile)
+* [Possible applications](#possible-applications)
+* [Plans for the future](#plans-for-the-future)
+
 ## Overview
 It is a **C** implementation from [the work of Alessandra Scafuro and Bihan Zhang](https://eprint.iacr.org/2021/1054.pdf) of the Nord Carolina State University. I tried to follow all the points of the paper that I invite you to read.  
 I choose to implement this because I believe in post-quantum cryptography and just felt like to implement something for fun. The current state of the work is finished but not polished. Of course I invite you to message me any bugs/problems that for sure a C code has, but don't expect perfection (yet).  
