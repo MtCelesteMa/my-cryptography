@@ -1,6 +1,6 @@
 //https://eprint.iacr.org/2021/1054.pdf
-
 #include "ring.h"
+#include <openssl/rand.h>
 
 /*
  * this function checks if two arrays of the same

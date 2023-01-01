@@ -70,7 +70,7 @@ int main(void) {
   printf("pk_i: "); print_array(ring+SEC_BYTES*SEC_BYTES*3, SEC_BYTES*SEC_BYTES*3);
   printf("======================\n");
   */
- 
+ /*
     benchmark(2, 1000);
     
     benchmark(16, 1000);
@@ -79,8 +79,8 @@ int main(void) {
     benchmark(64, 1000);
     benchmark(128, 1000);
     benchmark(256, 1000);
-    benchmark(512, 100);
-    benchmark(1024, 100);
+    benchmark(512, 100);*/
+    benchmark(1024, 12);
     
     return 1;
 }

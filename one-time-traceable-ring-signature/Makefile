@@ -8,6 +8,7 @@ HEADERS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.
 
 main: $(SRCS) $(HEADERS)
 	$(CC) $(CFLAGS) $(SRCS) -o "$@"
+	AA = ./main
 
 main-debug: $(SRCS) $(HEADERS)
 	$(CC) $(CFLAGS) -O0 $(SRCS) -o "$@"

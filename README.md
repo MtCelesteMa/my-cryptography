@@ -28,8 +28,10 @@ assuming a message long 32bytes
 | 2^4 | 4.352Kb | 32bytes | 12.288Kb |
 | 2^8 | 69.632Kb | 32bytes | 196.608Kb |
 | 2^10 | 278.528Kb | 32bytes | 786.432Kb |
-| N | N*16^2 + N | msg_size | 3N\*(16)^2
+| N | N\*(16)^2 + N\*16 | msg_size | 3N\*(16)^2 |
 ### Tests conducted
+
+---
 | test type | sample size | milliseconds | ms each |
 |---|---|---|---|
 | keypair generation | 10000 | 872.726ms | 0.0872ms | 
@@ -57,6 +59,7 @@ assuming a message long 32bytes
 |verify N=256| 1000 | 17353.195000ms | 17.353195ms |
 |verify N=512| 100 | 3496.695000ms | 34.966950ms |
 |verify N=1024| 100 | 7306.840000ms | 73.068400ms |
+---
 
 Trace benchmark will be made later when the optimised RTraces() function is completed. Sorry for the disorder of `main.c`, but you will find a good documented `ring.c` and `ring.h`.
 
@@ -79,9 +82,9 @@ Important note: a key must be used only once and then canceled. If the key is re
 Possible applications can be online anonymous voting, based on blockchain: a project that I'm working at [github.com/NickP005/e-ring-voting/](https://github.com/NickP005/e-ring-voting/)
 
 ## Plans for the future
-+ clean the code
-+ add more comments, clean comments explaining everything
-+ performance tests
++ ~~clean the code~~
++ ~~add more comments, clean comments explaining everything~~
++ ~~performance tests~~
 + port to GPU using OpenCL to **G R E A T L Y** improve performance
-+ create a python wrapper and then a python package
++ ~~create a python wrapper~~ and then a python package
 + push it to mainstream cryptography libraries

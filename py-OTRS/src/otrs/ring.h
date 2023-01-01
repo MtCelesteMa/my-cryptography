@@ -1,7 +1,9 @@
+//https://eprint.iacr.org/2021/1054.pdf
+
 //create the header file for ring.c
 #ifndef RING_H
 #define RING_H
-#include <openssl/rand.h>
+#include <stdio.h>
 #include "sha2.h"
 
 //defined in bytes. Original paper suggests 16 bytes

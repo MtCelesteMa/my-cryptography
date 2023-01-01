@@ -1,0 +1,29 @@
+# pyproject.toml
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crypto-otrs"
+version = "1.0.0"
+description = "One-time Traceable Ring Signature of Alessandra Scafuro and Bihan Zhang implemented by @NickP05"
+readme = "README.md"
+authors = [{ name = "One Time Traceable Ring Signature", email = "truestop16@gmail.com" }]
+license = { file = "" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["cryptography", "ring", "signature", "otrs", "quantum-resistant"]
+dependencies = []
+requires-python = ">=3.6.9"
+
+[project.optional-dependencies]
+dev = ["black", "bumpver", "isort", "pip-tools", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/NickP005/my-cryptography"
+
+[project.scripts]
+realpython = "otrs.__main__:main"
