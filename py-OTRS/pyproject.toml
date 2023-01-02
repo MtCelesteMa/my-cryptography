@@ -4,8 +4,8 @@ requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "crypto-otrs"
-version = "1.0.0"
+name = "crypto_otrs"
+version = "1.0.5"
 description = "One-time Traceable Ring Signature of Alessandra Scafuro and Bihan Zhang implemented by @NickP05"
 readme = "README.md"
 authors = [{ name = "One Time Traceable Ring Signature", email = "truestop16@gmail.com" }]
@@ -26,4 +26,4 @@ dev = ["black", "bumpver", "isort", "pip-tools", "pytest"]
 Homepage = "https://github.com/NickP005/my-cryptography"
 
 [project.scripts]
-realpython = "otrs.__main__:main"
+realpython = "crypto_otrs.__main__:main"
