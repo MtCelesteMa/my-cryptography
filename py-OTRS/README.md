@@ -21,14 +21,14 @@ Below some example usage
 
 ### Create a keypair
 ```
-from crypto-otrs import ring
+from crypto_otrs import ring
 
 public_key, private_key = ring.keygen()
 ```
 
 ### Sign a message
 ```
-from crypto-otrs import ring
+from crypto_otrs import ring
 
 bob_public, bob_private = ring.keygen()
 alice_public, alice_private = ring.keygen()
@@ -45,7 +45,7 @@ alice_signature = ring.RSign(ring, alice_private, 1, b"pizza is the besta food o
 ### Verify a signature
 now someone gets a "signature", the public keys (MUST BE IN ORDER!) of it and the message:
 ```
-from crypto-otrs import ring
+from crypto_otrs import ring
 
 is_valid = ring.RVer(ring, b"pizza is the besta food of the world", signature) 
 # --> True or False
@@ -54,7 +54,7 @@ is_valid = ring.RVer(ring, b"pizza is the besta food of the world", signature)
 ### Trace a signature
 We don't know if Bob voted yet or is still playing video games, but we got 2 signatures... let's check if Alice cheated (Alice likes to cheat often):
 ```
-from crypto-otrs import ring
+from crypto_otrs import ring
 
 is_from_same_signer, traced_public_key = ring.RTrace(ring, signature_1, signature_2)
 # --> True, alice_public

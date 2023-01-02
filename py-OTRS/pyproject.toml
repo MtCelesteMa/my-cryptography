@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "crypto_otrs"
-version = "1.0.5"
+version = "1.0.7"
 description = "One-time Traceable Ring Signature of Alessandra Scafuro and Bihan Zhang implemented by @NickP05"
 readme = "README.md"
 authors = [{ name = "One Time Traceable Ring Signature", email = "truestop16@gmail.com" }]
